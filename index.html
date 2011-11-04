@@ -1,12 +1,73 @@
 <!DOCTYPE html>
-<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://ajax.org/2005/aml" >
-    <head profile="http://www.w3.org/2005/10/profile">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>3dgridlayout - Test</title>
-        <meta name="description" content=""/>
-        <meta name="keywords" content=""/>
-        <script type="javascript" />
-    </head>
-    <body>
-        <b>Hello World!</b>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:a="http://ajax.org/2005/aml">
+<head profile="http://www.w3.org/2005/10/profile">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>3dgridlayout - Test</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/reset.css" type="text/css"
+	media="screen">
+<link rel="stylesheet" href="css/style.css" type="text/css"
+	media="screen">
+
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery_devel-1.7.js"></script>
+<script type="text/javascript" src="js/3dgridlayout.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body class="autocenter">
+	<script type="text/javascript">
+                jQuery.noConflict();
+                /* we add a body class via get param to show different variations do this immediately to avoid FOUC */
+                jQuery("html").addClass("js_load");
+                jQuery(document).ready(function() {
+                	/* initialize form elements */
+                    jQuery("#frames").get(0).checked = getParameterByName("frames", true);
+                	setFrames(jQuery("#frames").get(0));
+                });
+                jQuery(window).load(function() {
+                    jQuery("html").removeClass("js_load");
+                    jQuery("html").addClass("js_loaddone");
+                });
+    </script>
+	<div class="wrapper autocenter content_width">
+		<header>
+			<div class="inside">
+				<h1>
+					<b>Header</b>
+				</h1>
+			</div>
+		</header>
+		<div class="main">
+			<article>
+				<section>
+					<div class="inside">
+						Article
+					</div>
+				</section>
+			</article>
+			<aside>
+				<div class="inside">
+					Aside
+				</div>
+			</aside>
+		</div>
+		<footer class="autocenter content_width">
+			<div class="inside">
+				Footer
+			</div>
+		</footer>
+	</div>
+	<div class="options">
+		<form id="styleform" action="">
+			<input type="checkbox" id="frames" name="frames"
+				onclick="setFrames(this)" />Frames
+		</form>
+	</div>
+	<script type="text/javascript">
+		function setFrames(e) {
+			e.checked?jQuery("body").addClass("frames"):jQuery("body").removeClass("frames");
+		}
+	</script>
+</body>

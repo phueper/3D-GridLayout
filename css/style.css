@@ -1,0 +1,94 @@
+/* HTML5 Elemente (auch) für nicht HTML5 Browser einrichten */
+article,aside,audio,canvas,command,datalist,details,embed,figcaption,figure,footer,header,hgroup,keygen,meter,nav,output,progress,section,source,video
+	{
+	display: block;
+}
+
+mark,rp,rt,ruby,summary,time {
+	display: inline
+}
+
+html,body,#wrapper {
+	height: 100%;
+}
+
+body {
+	margin-top: 0;
+	position: relative;
+	font: small Arial, sans-serif;
+	background: url('') #797c82 no-repeat top left;
+}
+
+.autocenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+html.js_load {
+	display: none;
+}
+
+/* Basic Structure ============================================================= */
+.wrapper {
+	margin: 0 auto;
+	position: relative;
+}
+
+.content_width {
+		width: 960px;
+}
+
+.main {
+	float:left;
+	width: 100%;
+	height: 100%;
+}
+
+.frames header, 
+.frames article, 
+.frames aside, 
+.frames footer {
+	 border: 1px solid red;
+}
+
+.frames .main {
+	border:1px solid green;
+	height: 150px;
+}
+
+/* Header */
+header {
+	float: left;
+	width: 100%;
+}
+
+/* Content */
+article {
+	float: left;
+	width: 66%;
+	height: 100%;
+}
+
+/* Sidebar */
+aside {
+	float: right;
+	width: 33%;
+	height: 100%;
+	position:relative;
+	right: 0px;
+}
+
+/* Footer */
+footer {
+	position:fixed;
+	bottom: 0px;
+	float: left;
+	width: 100%;
+}
+
+.options {
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+}
